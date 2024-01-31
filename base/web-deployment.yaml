@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver
+  namespace: ebdn
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webserver
+  template:
+    metadata:
+      labels:
+        app: webserver
+    spec:
+      containers:
+        - image: ebdnquay.ebdnlab.vmware.tamlab.rdu2.redhat.com:8443/images/apache-custom:v2
+          name: webserver
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+
