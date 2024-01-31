@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: ebdn
 
 resources:
+  - namespace.yaml
   - route.yaml  
   - service.yaml  
   - web-deployment.yaml
