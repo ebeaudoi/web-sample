@@ -13,4 +13,4 @@ patches:
   patch: |-
     - op: replace
       path: /spec/template/spec/containers/0/image
-      value: ebdnquay.ebdnlab.vmware.tamlab.rdu2.redhat.com:8443/images/apache-custom:v3
+      value: ebdnquay.ebdnlab.vmware.tamlab.rdu2.redhat.com:8443/images/apache-custom:v2
