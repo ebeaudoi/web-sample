@@ -14,7 +14,7 @@ spec:
         app: webserver
     spec:
       containers:
-        - image: ebdnquay.ebdnlab.vmware.tamlab.rdu2.redhat.com:8443/images/apache-custom:v2
+        - image: quay.io/ebeaudoi/httpd-24:latest
           name: webserver
           ports:
             - containerPort: 8080
