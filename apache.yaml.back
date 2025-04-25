@@ -1,8 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: webserver
   name: webserver
   namespace: ebdn
 spec:
@@ -16,17 +14,15 @@ spec:
         app: webserver
     spec:
       containers:
-        - image: quay.io/ebeaudoi/httpd-24:latest
+        - image: ebdnquay.ebdnlab.vmware.tamlab.rdu2.redhat.com:8443/images/apache-custom:v2
           name: webserver
           ports:
             - containerPort: 8080
               protocol: TCP
-
+---
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    app: webserver
   name: webserver
   namespace: ebdn
 spec:
@@ -37,7 +33,7 @@ spec:
   selector:
     app: webserver
   type: ClusterIP
-
+---
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
@@ -51,4 +47,3 @@ spec:
   to:
     kind: Service
     name: webserver
-
