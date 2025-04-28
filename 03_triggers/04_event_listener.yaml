@@ -1,0 +1,8 @@
+apiVersion: triggers.tekton.dev/v1beta1
+kind: EventListener
+metadata:
+  name: webserver
+spec:
+  serviceAccountName: pipeline
+  triggers:
+    - triggerRef: webserver-trigger
