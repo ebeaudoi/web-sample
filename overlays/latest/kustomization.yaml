@@ -14,25 +14,25 @@ patches:
       value: quay.io/ebeaudoi/httpd-24:latest
     - op: replace
       path: /metadata/namespace
-      value: openshift-pipelines
+      value: pipelines-tutorial
 - target:
     kind: Namespace
     name: .*
   patch: |-
     - op: replace
       path: /metadata/name
-      value: openshift-pipelines
+      value: pipelines-tutorial
 - target:
     kind: Route
     name: .*
   patch: |-
     - op: replace
       path: /metadata/namespace
-      value: openshift-pipelines
+      value: pipelines-tutorial
 - target:
     kind: Service
     name: .*
   patch: |-
     - op: replace
       path: /metadata/namespace
-      value: openshift-pipelines
+      value: pipelines-tutorial
