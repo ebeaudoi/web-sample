@@ -12,3 +12,27 @@ patches:
     - op: replace
       path: /spec/template/spec/containers/0/image
       value: quay.io/ebeaudoi/httpd-24:latest
+    - op: replace
+      path: /metadata/namespace
+      value: openshift-pipelines
+- target:
+    kind: Namespace
+    name: .*
+  patch: |-
+    - op: replace
+      path: /metadata/name
+      value: openshift-pipelines
+- target:
+    kind: Route
+    name: .*
+  patch: |-
+    - op: replace
+      path: /metadata/namespace
+      value: openshift-pipelines
+- target:
+    kind: Service
+    name: .*
+  patch: |-
+    - op: replace
+      path: /metadata/namespace
+      value: openshift-pipelines
